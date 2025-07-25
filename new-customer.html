@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Customer - Seasonal Tire Storage</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation (same as main page) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="Seasonal Tire Storage" class="logo">
+                    <span class="logo-text">Seasonal Tire Storage</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- New Customer Form Section -->
+    <section class="page-header">
+        <div class="container">
+            <h1>New Customer Registration</h1>
+            <p>Get started with professional tire storage - No upfront costs required!</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-info">
+                    <h2>Why Choose Us?</h2>
+                    <ul>
+                        <li><i class="fas fa-check"></i> No upfront costs or deposits</li>
+                        <li><i class="fas fa-check"></i> Secure, climate-controlled facility</li>
+                        <li><i class="fas fa-check"></i> Professional pickup and delivery</li>
+                        <li><i class="fas fa-check"></i> Flexible storage durations</li>
+                        <li><i class="fas fa-check"></i> 24/7 customer support</li>
+                    </ul>
+                </div>
+                <form class="customer-form" id="newCustomerForm">
+                    <h3>Customer Information</h3>
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
+
+                    <h3>Tire Information</h3>
+                    <div class="form-group">
+                        <label for="tireCount">Number of Tires *</label>
+                        <select id="tireCount" name="tireCount" required>
+                            <option value="">Select number of tires</option>
+                            <option value="4">4 tires</option>
+                            <option value="5">5 tires (including spare)</option>
+                            <option value="6">6 tires</option>
+                            <option value="8">8 tires (2 sets)</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tireSize">Tire Size</label>
+                        <input type="text" id="tireSize" name="tireSize" placeholder="e.g., 225/45R17">
+                    </div>
+                    <div class="form-group">
+                        <label for="storageType">Storage Type *</label>
+                        <select id="storageType" name="storageType" required>
+                            <option value="">Select storage type</option>
+                            <option value="winter">Winter Tires (Summer Storage)</option>
+                            <option value="summer">Summer Tires (Winter Storage)</option>
+                            <option value="both">Both Sets</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pickupDate">Preferred Pickup Date *</label>
+                        <input type="date" id="pickupDate" name="pickupDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Additional Notes</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="Any special instructions or requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Registration
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as main page) -->
+    <footer class="footer">
+        <!-- Footer content same as main page -->
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Form handling
+        document.getElementById('newCustomerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (validateForm(this)) {
+                // Show success message
+                alert('Thank you for your registration! We will contact you within 24 hours to confirm your pickup details.');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
